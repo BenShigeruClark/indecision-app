@@ -28,8 +28,6 @@ const onFormSubmit = (e) => {
 // create "Remove All" button above list
 // on click -> wipe the array -> rerender
 
-const appRoot = document.getElementById('app');
-
 // Create a render function that render the new jsx
 // Call it right away
 // Call it after options array added to 
@@ -37,6 +35,10 @@ const removeAll = () => {
   app.options.length = [];
   render();
 };
+
+const appRoot = document.getElementById('app');
+
+const numbers = [55, 101, 1000];
 
 const render = () => {
   const template = (
@@ -47,8 +49,10 @@ const render = () => {
       <p>{app.options.length}</p>
       <button onClick={removeAll}>Remove All</button>
       <ol>
-        <li>Item one</li>
-        <li>Item two</li>
+        {/* map over app.options getting back an array of lis (set key and text)  */
+        app.options.map((option) => <li key={option}>{option}</li>)
+        }
+
       </ol>
       <form onSubmit={onFormSubmit}>
         <input type="text" name="option" />
