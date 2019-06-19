@@ -1,3 +1,4 @@
+
 class IndecisionApp extends React.Component {
   render() {
     const title = 'Indecision';
@@ -46,8 +47,13 @@ class Action extends React.Component {
 // set onClick to fire the method
 
 class Options extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleRemoveAll = this.handleRemoveAll.bind(this);
+  }
   handleRemoveAll() {
-    alert('Remove is going to work!');
+    console.log(this.props.options);
+    // alert('Remove is going to work!');
   }
   render() {
     return (
