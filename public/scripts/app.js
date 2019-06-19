@@ -70,11 +70,6 @@ var Counter = function (_React$Component) {
   return Counter;
 }(React.Component);
 
-// Create three methods: handleAddOne, handleMinusOne, handleReset
-// Use console.log to print method name
-// Wire up onClick & bind in the constructor 
-
-
 ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
 
 // let count = 0;
