@@ -117,18 +117,24 @@ var Options = function (_React$Component4) {
   }
 
   _createClass(Options, [{
+    key: 'handleRemoveAll',
+    value: function handleRemoveAll() {
+      alert('Remove is going to work!');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
         'div',
         null,
         React.createElement(
-          'ol',
-          null,
-          this.props.options.map(function (option) {
-            return React.createElement(Option, { key: option, optionText: option });
-          })
-        )
+          'button',
+          { onClick: this.handleRemoveAll },
+          'Remove all'
+        ),
+        this.props.options.map(function (option) {
+          return React.createElement(Option, { key: option, optionText: option });
+        })
       );
     }
   }]);
@@ -162,8 +168,9 @@ var Option = function (_React$Component5) {
   return Option;
 }(React.Component);
 
-// AddOption -> addOption component here
-
+// 1. Setup the form with text input and submit button
+// 2. Wire up onSubmit
+// 3. handleAddOption -> fetch teh value typed -> if value, then alert
 
 var AddOption = function (_React$Component6) {
   _inherits(AddOption, _React$Component6);
@@ -175,12 +182,32 @@ var AddOption = function (_React$Component6) {
   }
 
   _createClass(AddOption, [{
+    key: 'handleAddOption',
+    value: function handleAddOption(e) {
+      e.preventDefault();
+
+      var option = e.target.elements.option.value;
+
+      if (option) {
+        alert(option);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
         'div',
         null,
-        'addOption component here'
+        React.createElement(
+          'form',
+          { onSubmit: this.handleAddOption },
+          React.createElement('input', { type: 'text', name: 'option' }),
+          React.createElement(
+            'button',
+            null,
+            'Add Option'
+          )
+        )
       );
     }
   }]);

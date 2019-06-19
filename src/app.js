@@ -46,14 +46,16 @@ class Action extends React.Component {
 // set onClick to fire the method
 
 class Options extends React.Component {
+  handleRemoveAll() {
+    alert('Remove is going to work!');
+  }
   render() {
     return (
       <div>
-        <ol>
+          <button onClick={this.handleRemoveAll}>Remove all</button>
           {
             this.props.options.map((option) => <Option key={option} optionText={option}/>)
           }
-        </ol>
       </div>
     );
   }
@@ -70,12 +72,27 @@ class Option extends React.Component {
   }
 }
 
-// AddOption -> addOption component here
+// 1. Setup the form with text input and submit button
+// 2. Wire up onSubmit
+// 3. handleAddOption -> fetch teh value typed -> if value, then alert
+
 class AddOption extends React.Component {
+  handleAddOption(e) {
+    e.preventDefault();
+
+    const option = e.target.elements.option.value;
+
+    if (option) {
+      alert(option);
+    }
+  }
   render() {
     return (
       <div>
-        addOption component here
+        <form onSubmit={this.handleAddOption}>
+          <input type="text" name="option"/>
+          <button>Add Option</button>
+        </form>
       </div>
     )
   }
