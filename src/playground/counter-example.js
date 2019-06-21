@@ -1,3 +1,5 @@
+// count - setup default prop value to 0
+
 class Counter extends React.Component {
   constructor(props) {
     super(props);
