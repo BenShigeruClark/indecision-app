@@ -4,12 +4,6 @@
   margin-bottom: $xl-size;
 }
 
-// create a widget element selector (message) - use it on the p tag
-// off-white color
-// no margin
-// 1-size padding on all sides
-// center the text using - text-align: center;
-// set the bottom border to a 1px solid border lighted version of $light-blue 10%
 .widget__message {
   border-bottom: 1px solid lighten($light-blue, 10%);
   color: $off-white;
@@ -18,8 +12,6 @@
   text-align: center;
   margin-bottom: 1px;
 }
-
-
 // Widget Header
 .widget-header {
   background: $blue;
@@ -28,11 +20,9 @@
   justify-content: space-between;
   padding: $m-size;
 }
-
 // setup an element selector for widget-header
 // set margin
 // use the class
 .widget-header__title {
   margin: 0;
-
 }
